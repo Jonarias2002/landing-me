@@ -289,8 +289,8 @@ export function HeroSection() {
                 color="gray"
                 leftSection={<IconDownload size={isMobile ? 18 : 20} />}
                 component="a"
-                href="/cv-jonathan-arias.pdf"
-                download
+                href="/FullStack%20-%20TechnicalLead.pdf"
+                download="FullStack - TechnicalLead.pdf"
                 fullWidth={isMobile}
                 style={{
                   maxWidth: isMobile ? '100%' : 'auto',
