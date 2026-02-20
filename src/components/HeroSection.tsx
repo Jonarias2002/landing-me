@@ -289,7 +289,7 @@ export function HeroSection() {
                 color="gray"
                 leftSection={<IconDownload size={isMobile ? 18 : 20} />}
                 component="a"
-                href="/FullStack%20-%20TechnicalLead.pdf"
+                href="/cv.pdf"
                 download="FullStack - TechnicalLead.pdf"
                 fullWidth={isMobile}
                 style={{
