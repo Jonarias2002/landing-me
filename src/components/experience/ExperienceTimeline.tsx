@@ -7,9 +7,11 @@ import {
   Stack,
   Text,
   Badge,
+  Box,
 } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks'
 import { IconBriefcase, IconCalendar, IconMapPin } from '@tabler/icons-react'
-import { experience } from '../../data/experience'
+import { useExperience } from '../../hooks/useExperience'
 import { Experience } from '../../types'
 import { ExperienceCard } from './ExperienceCard'
 
@@ -24,6 +26,79 @@ export function ExperienceTimeline({
   onHover, 
   onExperienceClick 
 }: ExperienceTimelineProps) {
+  const isMobile = useMediaQuery('(max-width: 768px)')
+  const experience = useExperience()
+
+  if (isMobile) {
+    return (
+      <Stack gap="md">
+        {experience.map((exp, index) => (
+          <Box
+            key={exp.id}
+            style={{
+              animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
+            }}
+          >
+            <Paper
+              p="md"
+              radius="lg"
+              mb="sm"
+              style={{
+                background: 'rgba(51, 154, 240, 0.08)',
+                border: '1px solid rgba(51, 154, 240, 0.2)',
+              }}
+            >
+              <Stack gap="xs">
+                <Group gap="sm" align="center" wrap="nowrap">
+                  <div style={{
+                    background: 'linear-gradient(135deg, #339af0 0%, #22c55e 100%)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '40px',
+                    height: '40px',
+                    flexShrink: 0,
+                    boxShadow: '0 4px 12px rgba(51, 154, 240, 0.3)',
+                  }}>
+                    <IconBriefcase size={20} color="white" stroke={2} />
+                  </div>
+                  <Stack gap={2} style={{ flex: 1, minWidth: 0 }}>
+                    <Text fw={700} size="lg" c="white" style={{ fontFamily: 'var(--font-poppins)' }} truncate>
+                      {exp.company}
+                    </Text>
+                    <Text c="blue.4" fw={500} size="sm" truncate>
+                      {exp.position}
+                    </Text>
+                  </Stack>
+                </Group>
+                
+                <Badge
+                  variant="gradient"
+                  gradient={{ from: 'blue', to: 'cyan', deg: 135 }}
+                  size="md"
+                  radius="xl"
+                  leftSection={<IconCalendar size={12} />}
+                  style={{ alignSelf: 'flex-start' }}
+                >
+                  {exp.period}
+                </Badge>
+              </Stack>
+            </Paper>
+            
+            <ExperienceCard
+              exp={exp}
+              index={index}
+              hoveredItem={hoveredItem}
+              onHover={onHover}
+              onClick={onExperienceClick}
+            />
+          </Box>
+        ))}
+      </Stack>
+    )
+  }
+
   return (
     <Timeline
       active={experience.length - 1}

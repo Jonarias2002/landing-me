@@ -1,0 +1,126 @@
+{
+  "hero": {
+    "title": "Jonathan Arias",
+    "subtitle1": "Estudiante de Ingeniería de Software",
+    "subtitle2": "Especialista en React y Next.js",
+    "subtitle3": "Apasionado por la innovación",
+    "description": "Transformo ideas en aplicaciones web robustas, interactivas y de alto rendimiento, integrando soluciones de IA y automatizaciones con n8n. Cuento con más de 4 años de experiencia construyendo productos digitales escalables para clientes y equipos de alto impacto.",
+    "viewProjects": "Ver mis proyectos",
+    "downloadCV": "Descargar CV"
+  },
+  "nav": {
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "navigation": "Navegación"
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "viewMore": "Ver más proyectos en GitHub →",
+    "viewProject": "Ver proyecto",
+    "viewCode": "Ver código",
+    "viewGitHub": "Ver en GitHub",
+    "viewLive": "Ver demo en vivo",
+    "items": {
+      "1": {
+        "title": "Ingresos y Gastos",
+        "description": "App de finanzas personales con gráficos interactivos (Victory), persistencia en localStorage, exportación a JSON/CSV y diseño responsive con Tailwind CSS."
+      },
+      "2": {
+        "title": "My Portfolio",
+        "description": "Mi primer portafolio personal desarrollado con React y Tailwind CSS, con diseño dark theme, secciones de about, skills, proyectos y contacto."
+      },
+      "3": {
+        "title": "Rick and Morty Explorer",
+        "description": "Uno de mis primeros proyectos personales: explorador de personajes de Rick and Morty consumiendo la API pública, con búsqueda y filtros."
+      }
+    }
+  },
+  "experience": {
+    "title": "Mi Trayectoria",
+    "description": "Un recorrido por mi experiencia profesional y los proyectos que han marcado mi carrera",
+    "achievements": "Logros Destacados",
+    "technologies": "Tecnologías Utilizadas",
+    "viewMore": "Ver {count} logros más...",
+    "skills": {
+      "title": "Skills",
+      "subtitle": "Stack principal · Frontend, Backend, IA y QA"
+    },
+    "jobs": {
+      "1": {
+        "position": "Technical Lead Full-Stack",
+        "period": "01-2024 / Actualidad",
+        "achievements": [
+          "Incrementé la productividad en ~30% con paneles HUB/CMS en React, Next.js y MUI, automatizando flujos y centralizando información",
+          "Diseñé agentes de IA autónomos con Python y Node.js para automatizar flujos internos (clasificación de leads, extracción inteligente de datos de documentos críticos)",
+          "Lideré el diseño e implementación de aplicaciones desktop cross-platform estilo WhatsApp Web usando React y Electron, compartiendo lógica con Next.js para maximizar reutilización",
+          "Construí una plataforma E-learning end-to-end: conceptualización UI, portales de alumno/profesor con seguimiento de progreso y sistemas de evaluación",
+          "Implementé dashboards de analítica de IA con React y Mantine UI para monitorear desempeño, uso de tokens y métricas de satisfacción en tiempo real"
+        ]
+      },
+      "2": {
+        "position": "Full-Stack Developer",
+        "period": "05-2023 / 04-2025",
+        "achievements": [
+          "Reduje tickets manuales en ~45% con sistemas de soporte IA integrando OpenAI (GPT-4) y Anthropic (Claude) para respuestas contextuales automatizadas",
+          "Diseñé la arquitectura de mensajería privada (chat, voz, video) con WebRTC y Python, definiendo flujos de comunicación y escalabilidad; adoptada en web y móvil por instituciones en Panamá, Venezuela y España",
+          "Actué como Technical Lead coordinando equipos multidisciplinarios para llevar diseños arquitectónicos a producción",
+          "Dirigí el reclutamiento técnico del equipo full-stack, diseñando retos y entrevistas que resultaron en la contratación de 6 desarrolladores",
+          "Integré gestión de estado y UI en tiempo real con Redux, Mantine y Socket.io para experiencias consistentes en clientes globales"
+        ]
+      },
+      "3": {
+        "position": "Front-End Developer",
+        "period": "02-2021 / 08-2023",
+        "achievements": [
+          "Impulsé conversiones en ~40% y aumenté el tiempo en página en ~25% al desarrollar landing pages de alto rendimiento con animaciones interactivas",
+          "Arquitecté e implementé microservicios MERN siguiendo principios de Clean Architecture para modularidad, escalabilidad y reutilización de código",
+          "Contenericé aplicaciones con Docker para estandarizar distribución y despliegue en múltiples entornos",
+          "Implementé sistemas de autenticación segura y RBAC alineados con estándares de Auth0",
+          "Colaboré con diseño para entregar UI/UX refinada, proponiendo mejoras de look & feel que elevaron el engagement",
+          "Gestioné estado y estilos en aplicaciones complejas usando Redux, Tailwind CSS y SASS"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "Hablemos",
+    "description": "Estoy disponible para nuevos proyectos y colaboraciones. No dudes en contactarme para discutir cómo puedo ayudarte a hacer realidad tus ideas.",
+    "location": "Venezuela",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "phone": "Teléfono",
+    "github": "GitHub",
+    "sendEmail": "Enviar email",
+    "viewLinkedIn": "Ver perfil de LinkedIn",
+    "call": "Llamar",
+    "viewGitHub": "Ver perfil de GitHub",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre completo",
+      "nameError": "El nombre debe tener al menos 2 caracteres",
+      "email": "Email",
+      "emailPlaceholder": "tu.email@ejemplo.com",
+      "emailError": "Email inválido",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+      "messageError": "El mensaje debe tener al menos 10 caracteres",
+      "submit": "Enviar Mensaje",
+      "successTitle": "¡Mensaje enviado!",
+      "successMessage": "Gracias por contactarme. Te responderé lo antes posible.",
+      "errorTitle": "Error al enviar",
+      "errorMessage": "Hubo un error al enviar el mensaje. Por favor, vuelve a intentarlo.",
+      "closeModal": "Entendido",
+      "retryButton": "Volver a intentar"
+    }
+  },
+  "footer": {
+    "copyright": "Diseñado y construido por Jonathan Arias",
+    "year": "© 2025"
+  },
+  "common": {
+    "language": "Idioma",
+    "changeTheme": "Cambiar tema"
+  }
+}
+

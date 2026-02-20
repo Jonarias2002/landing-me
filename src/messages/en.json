@@ -1,0 +1,126 @@
+{
+  "hero": {
+    "title": "Jonathan Arias",
+    "subtitle1": "Student Software Engineer",
+    "subtitle2": "React and Next.js Specialist",
+    "subtitle3": "Passionate about innovation",
+    "description": "I transform ideas into robust, interactive, and high-performance web applications, integrating AI solutions and n8n automations. I have more than 4 years of experience building scalable digital products for clients and high-impact teams.",
+    "viewProjects": "View my projects",
+    "downloadCV": "Download CV"
+  },
+  "nav": {
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "navigation": "Navigation"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewMore": "View more projects on GitHub →",
+    "viewProject": "View project",
+    "viewCode": "View code",
+    "viewGitHub": "View on GitHub",
+    "viewLive": "View live demo",
+    "items": {
+      "1": {
+        "title": "Income & Expenses",
+        "description": "Personal finance app with interactive charts (Victory), localStorage persistence, JSON/CSV export, and responsive design with Tailwind CSS."
+      },
+      "2": {
+        "title": "My Portfolio",
+        "description": "My first personal portfolio built with React and Tailwind CSS, featuring a dark theme design with about, skills, projects and contact sections."
+      },
+      "3": {
+        "title": "Rick and Morty Explorer",
+        "description": "One of my first personal projects: Rick and Morty character explorer consuming the public API, with search and filters."
+      }
+    }
+  },
+  "experience": {
+    "title": "My Journey",
+    "description": "A journey through my professional experience and the projects that have marked my career",
+    "achievements": "Key Achievements",
+    "technologies": "Technologies Used",
+    "viewMore": "View {count} more achievements...",
+    "skills": {
+      "title": "Skills",
+      "subtitle": "Main stack · Frontend, Backend, AI and QA"
+    },
+    "jobs": {
+      "1": {
+        "position": "Technical Lead Full-Stack",
+        "period": "01-2024 / Present",
+        "achievements": [
+          "Increased productivity by ~30% with HUB/CMS panels in React, Next.js and MUI, automating workflows and centralizing information",
+          "Designed autonomous AI agents with Python and Node.js to automate internal workflows (lead classification, intelligent data extraction from critical documents)",
+          "Led the design and implementation of cross-platform desktop applications in WhatsApp Web style using React and Electron, sharing logic with Next.js to maximize reuse",
+          "Built an end-to-end E-learning platform: UI conceptualization, student/teacher portals with progress tracking and evaluation systems",
+          "Implemented AI analytics dashboards with React and Mantine UI to monitor performance, token usage and satisfaction metrics in real-time"
+        ]
+      },
+      "2": {
+        "position": "Full-Stack Developer",
+        "period": "05-2023 / 04-2025",
+        "achievements": [
+          "Reduced manual tickets by ~45% with AI support systems integrating OpenAI (GPT-4) and Anthropic (Claude) for automated contextual responses",
+          "Designed private messaging architecture (chat, voice, video) with WebRTC and Python, defining communication flows and scalability; adopted in web and mobile by institutions in Panama, Venezuela and Spain",
+          "Acted as Technical Lead coordinating multidisciplinary teams to bring architectural designs to production",
+          "Led technical recruitment of the full-stack team, designing challenges and interviews that resulted in hiring 6 developers",
+          "Integrated real-time state management and UI with Redux, Mantine and Socket.io for consistent experiences across global clients"
+        ]
+      },
+      "3": {
+        "position": "Front-End Developer",
+        "period": "02-2021 / 08-2023",
+        "achievements": [
+          "Boosted conversions by ~40% and increased time on page by ~25% by developing high-performance landing pages with interactive animations",
+          "Architected and implemented MERN microservices following Clean Architecture principles for modularity, scalability and code reuse",
+          "Containerized applications with Docker to standardize distribution and deployment across multiple environments",
+          "Implemented secure authentication and RBAC systems aligned with Auth0 standards",
+          "Collaborated with design to deliver refined UI/UX, proposing look & feel improvements that increased engagement",
+          "Managed state and styles in complex applications using Redux, Tailwind CSS and SASS"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Talk",
+    "description": "I'm available for new projects and collaborations. Don't hesitate to contact me to discuss how I can help you bring your ideas to life.",
+    "location": "Venezuela",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "phone": "Phone",
+    "github": "GitHub",
+    "sendEmail": "Send email",
+    "viewLinkedIn": "View LinkedIn profile",
+    "call": "Call",
+    "viewGitHub": "View GitHub profile",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "nameError": "Name must be at least 2 characters",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "emailError": "Invalid email",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "messageError": "Message must be at least 10 characters",
+      "submit": "Send Message",
+      "successTitle": "Message sent!",
+      "successMessage": "Thank you for contacting me. I'll get back to you as soon as possible.",
+      "errorTitle": "Error sending",
+      "errorMessage": "There was an error sending the message. Please try again.",
+      "closeModal": "Got it",
+      "retryButton": "Try again"
+    }
+  },
+  "footer": {
+    "copyright": "Designed and built by Jonathan Arias",
+    "year": "© 2025"
+  },
+  "common": {
+    "language": "Language",
+    "changeTheme": "Change theme"
+  }
+}
+

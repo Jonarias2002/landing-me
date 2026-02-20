@@ -24,20 +24,24 @@ Un portafolio moderno y elegante construido con **Next.js 15**, **Mantine UI** y
 ## 🚀 Tecnologías Utilizadas
 
 - **Frontend**: Next.js 15, React 19, TypeScript
-- **UI Components**: Mantine UI v7
+- **UI Components**: Mantine UI v8
 - **Iconos**: Tabler Icons
 - **Fuentes**: Google Fonts (Poppins, Inter, Roboto)
-- **Estilos**: CSS Modules + Tailwind CSS v4
-- **Animaciones**: CSS Keyframes + Framer Motion (opcional)
+- **Estilos**: Tailwind CSS v4 + estilos personalizados
+- **Animaciones**: CSS Keyframes
+- **i18n**: next-intl
+- **Email**: EmailJS
 
 ## 📁 Estructura del Proyecto
 
 ```
 src/
-├── app/                    # App Router de Next.js
-│   ├── layout.tsx         # Layout principal con Mantine Provider
-│   ├── page.tsx           # Página principal
-│   └── globals.css        # Estilos globales
+├── app/                         # App Router de Next.js
+│   ├── [locale]/
+│   │   ├── layout.tsx          # Layout con i18n + Mantine
+│   │   └── page.tsx            # Página principal
+│   ├── layout.tsx              # Root layout
+│   └── globals.css             # Estilos globales
 ├── components/             # Componentes reutilizables
 │   ├── Header.tsx         # Navegación y switch de tema
 │   ├── HeroSection.tsx    # Sección principal con animación typing
@@ -45,13 +49,21 @@ src/
 │   ├── ExperienceSection.tsx # Timeline de experiencia laboral
 │   ├── ContactSection.tsx # Formulario de contacto
 │   └── Footer.tsx         # Footer con enlaces sociales
-├── data/                  # Datos estáticos
-│   ├── projects.ts        # Información de proyectos
-│   └── experience.ts      # Experiencia laboral
-├── lib/                   # Utilidades y configuración
-│   └── theme.ts           # Tema personalizado de Mantine
-└── types/                 # Tipos TypeScript
-    └── index.ts           # Interfaces principales
+├── data/                        # Datos estáticos
+│   ├── projects.ts              # Información de proyectos
+│   └── experience.ts            # Experiencia laboral
+├── hooks/
+│   └── useExperience.ts         # Hook para experiencia traducida
+├── i18n/
+│   ├── request.ts               # Configuración de mensajes
+│   └── routing.ts               # Rutas de idioma
+├── messages/
+│   ├── es.json                  # Textos en español
+│   └── en.json                  # Textos en inglés
+├── lib/
+│   └── theme.ts                 # Tema personalizado de Mantine
+└── types/
+    └── index.ts                 # Interfaces principales
 ```
 
 ## 🛠️ Instalación
@@ -162,28 +174,25 @@ Las animaciones se definen en `src/app/globals.css`:
 
 ## 🚀 Deployment
 
-### Vercel (Recomendado)
+### Vercel (la forma más fácil)
+
+1. Sube tu proyecto a GitHub.
+2. Ve a [https://vercel.com](https://vercel.com) y conecta tu cuenta de GitHub.
+3. Importa el repositorio.
+4. En **Environment Variables**, agrega:
+   - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+   - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+   - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+5. Click en **Deploy**.
+
+Listo. Vercel detecta Next.js automáticamente.
+
+### Deploy por CLI (opcional)
+
 ```bash
-npm run build
+npm i -g vercel
+vercel
 vercel --prod
-```
-
-### Netlify
-```bash
-npm run build
-# Subir la carpeta .next a Netlify
-```
-
-### Docker
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY . .
-RUN npm run build
-EXPOSE 3000
-CMD ["npm", "start"]
 ```
 
 ## 📊 Performance

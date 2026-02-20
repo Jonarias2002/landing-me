@@ -13,19 +13,27 @@ import {
   Stack,
 } from '@mantine/core'
 import { IconBrandGithub, IconExternalLink } from '@tabler/icons-react'
+import { useTranslations, useMessages } from 'next-intl'
 import { projects } from '../data/projects'
 
-const fadeInUp = {
-  '0%': { opacity: 0, transform: 'translateY(30px)' },
-  '100%': { opacity: 1, transform: 'translateY(0)' },
-}
-
 export function ProjectsSection() {
+  const t = useTranslations('projects')
+  const messages = useMessages()
   const featuredProjects = projects.filter(project => project.featured)
 
+  const projectItems = (messages as { projects?: { items?: Record<string, { title?: string; description?: string }> } })?.projects?.items || {}
+
+  const getProjectTitle = (project: typeof projects[0]) => {
+    return projectItems[project.id]?.title || project.title
+  }
+
+  const getProjectDescription = (project: typeof projects[0]) => {
+    return projectItems[project.id]?.description || project.description
+  }
+
   return (
-    <Container size="lg" py="xl" id="proyectos">
-      <Stack spacing="xl">
+    <Container size="xl" fluid py="xl" id="proyectos" style={{ maxWidth: '1400px' }}>
+      <Stack gap="xl">
         {/* Título de sección */}
         <Title
           order={2}
@@ -37,12 +45,12 @@ export function ProjectsSection() {
             animation: 'fadeInUp 1s ease-out',
           }}
         >
-          Proyectos Destacados
+          {t('title')}
         </Title>
 
         {/* Grid de proyectos */}
         <SimpleGrid
-          cols={{ base: 1, md: 2 }}
+          cols={{ base: 1, sm: 2, md: 3 }}
           spacing="xl"
           style={{ animation: 'fadeInUp 1s ease-out 0.3s both' }}
         >
@@ -78,11 +86,11 @@ export function ProjectsSection() {
               {/* Contenido de la tarjeta */}
               <Stack gap="md" mt="md">
                 <Title order={3} size="h4" c="white">
-                  {project.title}
+                  {getProjectTitle(project)}
                 </Title>
 
                 <Text c="gray.3" size="sm" lineClamp={3}>
-                  {project.description}
+                  {getProjectDescription(project)}
                 </Text>
 
                 {/* Tecnologías */}
@@ -111,7 +119,7 @@ export function ProjectsSection() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title="Ver en GitHub"
+                      title={t('viewGitHub')}
                     >
                       <IconBrandGithub size={20} />
                     </ActionIcon>
@@ -124,7 +132,7 @@ export function ProjectsSection() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title="Ver demo en vivo"
+                      title={t('viewLive')}
                     >
                       <IconExternalLink size={20} />
                     </ActionIcon>
@@ -148,11 +156,11 @@ export function ProjectsSection() {
               },
             }}
             component="a"
-            href="https://github.com/jonathanarias"
+            href="https://github.com/jonarias2002"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ver más proyectos en GitHub →
+            {t('viewMore')}
           </Text>
         </Group>
       </Stack>

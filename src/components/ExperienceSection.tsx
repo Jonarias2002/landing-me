@@ -27,7 +27,7 @@ export function ExperienceSection() {
   }
 
   return (
-    <Container size="lg" py="xl" id="experiencia">
+    <Container size="xl" fluid py="xl" id="experiencia" style={{ maxWidth: '1400px' }}>
       <Stack gap="xl">
         <ExperienceHeader />
         

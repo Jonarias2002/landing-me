@@ -1,8 +1,11 @@
 'use client'
 
 import { Title } from '@mantine/core'
+import { useTranslations } from 'next-intl'
 
 export function ExperienceHeader() {
+  const t = useTranslations('experience')
+  
   return (
     <Title
       order={2}
@@ -14,7 +17,7 @@ export function ExperienceHeader() {
         animation: 'fadeInUp 1s ease-out',
       }}
     >
-      Mi Trayectoria
+      {t('title')}
     </Title>
   )
 }

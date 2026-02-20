@@ -24,8 +24,3 @@ export interface ContactForm {
   message: string
 }
 
-export interface SocialLink {
-  name: string
-  url: string
-  icon: string
-}

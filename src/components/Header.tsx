@@ -15,23 +15,25 @@ import {
 } from '@mantine/core'
 import { IconSun, IconMoon } from '@tabler/icons-react'
 import { useDisclosure } from '@mantine/hooks'
-
-const navigation = [
-  { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Experiencia', href: '#experiencia' },
-  { label: 'Contacto', href: '#contacto' },
-]
+import { useTranslations } from 'next-intl'
 
 export function Header() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme()
   const [opened, { toggle, close }] = useDisclosure(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const t = useTranslations('nav')
+  const tCommon = useTranslations('common')
+
+  const navigation = [
+    { label: t('projects'), href: '#proyectos' },
+    { label: t('experience'), href: '#experiencia' },
+    { label: t('contact'), href: '#contacto' },
+  ]
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-
+    setMounted(true)
+    const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -60,9 +62,8 @@ export function Header() {
           zIndex: 1000,
         }}
       >
-        <Container size="lg" h="100%">
+        <Container size="xl" fluid h="100%" style={{ maxWidth: '1400px' }}>
           <Group justify="space-between" h="100%">
-            {/* Logo/Nombre */}
             <Text
               size="xl"
               fw={700}
@@ -92,24 +93,24 @@ export function Header() {
                   {item.label}
                 </Button>
               ))}
-              
-              {/* Switch de tema */}
-              <Switch
-                checked={colorScheme === 'dark'}
-                onChange={toggleColorScheme}
-                size="md"
-                onLabel={<IconSun size={16} stroke={2.5} />}
-                offLabel={<IconMoon size={16} stroke={2.5} />}
-                styles={{
-                  root: {
-                    '--mantine-color-white': '#1A1B1E',
-                    '--mantine-color-blue-6': '#339af0',
-                  },
-                }}
-              />
+
+              {mounted && (
+                <Switch
+                  checked={colorScheme === 'dark'}
+                  onChange={toggleColorScheme}
+                  size="md"
+                  onLabel={<IconSun size={16} stroke={2.5} />}
+                  offLabel={<IconMoon size={16} stroke={2.5} />}
+                  styles={{
+                    root: {
+                      '--mantine-color-white': '#1A1B1E',
+                      '--mantine-color-blue-6': '#339af0',
+                    },
+                  }}
+                />
+              )}
             </Group>
 
-            {/* Botón móvil */}
             <Burger
               opened={opened}
               onClick={toggle}
@@ -130,13 +131,8 @@ export function Header() {
         hiddenFrom="md"
         zIndex={100000}
         styles={{
-          header: {
-            backgroundColor: '#1A1B1E',
-            color: 'white',
-          },
-          body: {
-            backgroundColor: '#1A1B1E',
-          },
+          header: { backgroundColor: '#1A1B1E', color: 'white' },
+          body: { backgroundColor: '#1A1B1E' },
         }}
       >
         <Stack gap="xl" mt={rem(60)}>
@@ -160,25 +156,27 @@ export function Header() {
               {item.label}
             </Button>
           ))}
-          
-          <Switch
-            checked={colorScheme === 'dark'}
-            onChange={toggleColorScheme}
-            size="lg"
-            onLabel={<IconSun size={20} stroke={2.5} />}
-            offLabel={<IconMoon size={20} stroke={2.5} />}
-            label="Cambiar tema"
-            styles={{
-              root: {
-                '--mantine-color-white': '#1A1B1E',
-                '--mantine-color-blue-6': '#339af0',
-              },
-              label: {
-                color: 'white',
-                fontSize: '1.1rem',
-              },
-            }}
-          />
+
+          {mounted && (
+            <Switch
+              checked={colorScheme === 'dark'}
+              onChange={toggleColorScheme}
+              size="lg"
+              onLabel={<IconSun size={20} stroke={2.5} />}
+              offLabel={<IconMoon size={20} stroke={2.5} />}
+              label={tCommon('changeTheme')}
+              styles={{
+                root: {
+                  '--mantine-color-white': '#1A1B1E',
+                  '--mantine-color-blue-6': '#339af0',
+                },
+                label: {
+                  color: 'white',
+                  fontSize: '1.1rem',
+                },
+              }}
+            />
+          )}
         </Stack>
       </Drawer>
     </>
